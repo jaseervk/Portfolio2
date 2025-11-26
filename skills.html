@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skills</title>
+
+  <!-- POPPINS FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg1: #071010;
+      --bg2: #031414;
+      --accent1: #00f0d6;
+      --accent2: #2ee06a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      color: #cde;
+      background:
+        radial-gradient(1200px 800px at 10% 10%, rgba(0, 240, 214, 0.05), transparent 10%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      overflow-x: hidden;
+    }
+
+    /* ---------------- NAVBAR ---------------- */
+    nav {
+      width: 100%;
+      padding: 25px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(10px);
+    }
+
+    nav .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--accent1);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 35px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #d8d8d8;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: var(--accent1);
+    }
+
+    /* -------------- SKILLS LAYOUT ---------------- */
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 140px;
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+
+    header {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+
+    header h1 {
+      font-size: 48px;
+      color: #dff;
+      letter-spacing: 2px;
+    }
+
+    .tag {
+      color: var(--accent1);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease;
+    }
+
+    .grid.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(0, 240, 214, 0.06);
+      padding: 26px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(2, 8, 8, 0.5), inset 0 -6px 20px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(6px);
+      min-height: 92px;
+    }
+
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+      color: #dff;
+      margin-bottom: 14px;
+    }
+
+    .icon {
+      width: 26px;
+      height: 26px;
+      display: grid;
+      place-items: center;
+      background: rgba(0, 240, 214, 0.08);
+      border-radius: 6px;
+    }
+
+    .barwrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .bar {
+      flex: 1;
+      height: 14px;
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent2), var(--accent1));
+      border-radius: 12px;
+      width: 0%;
+      transition: width 900ms cubic-bezier(.2, .9, .3, 1);
+    }
+
+    .pct {
+      width: 36px;
+      text-align: right;
+      color: var(--accent1);
+      font-weight: 600;
+    }
+
+    .bar::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 28px;
+      background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.65));
+    }
+
+    @media (max-width: 880px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      header h1 {
+        font-size: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">< JASEER_VK /></div>
+    <ul>
+      <li><a href="/templates/about.html">About Me</a></li>
+      <li><a href="/templates/education.html">Education</a></li>
+      <li><a href="/templates/skills.html">Skills</a></li>
+      <li><a href="/templates/experience.html">Experience</a></li>
+      <li><a href="/templates/projects.html">Projects</a></li>
+      <li><a href="/templates/certification.html">Certifications</a></li>
+      <li><a href="/templates/achievement.html">Achievements</a></li>
+      <li><a href="/templates/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- SKILLS SECTION -->
+  <div class="wrap">
+    <header>
+      <h1>&lt;Technical Skills <span class="tag">/&gt;</span></h1>
+    </header>
+
+    <main class="grid" id="skillsGrid">
+
+      <section class="card">
+        <div class="title"><span class="icon"></span>Penetration Testing</div>
+        <div class="barwrap">
+          <div class="bar"><div class="progress" data-width="95%"></div></div>
+          <div class="pct">95%</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="title"><span class="icon"></span>Network Security</div>
+        <div class="barwrap">
+          <div class="bar"><div class="progress" data-width="90%"></div></div>
+          <div class="pct">90%</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="title"><span class="icon"></span>Incident Response</div>
+        <div class="barwrap">
+          <div class="bar"><div class="progress" data-width="92%"></div></div>
+          <div class="pct">92%</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="title"><span class="icon"></span>Threat Hunting</div>
+        <div class="barwrap">
+          <div class="bar"><div class="progress" data-width="85%"></div></div>
+          <div class="pct">85%</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="title"><span class="icon"></span>Vulnerability Assessment</div>
+        <div class="barwrap">
+          <div class="bar"><div class="progress" data-width="93%"></div></div>
+          <div class="pct">93%</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="title"><span class="icon"></span>Exploit Research</div>
+        <div class="barwrap">
+          <div class="bar"><div class="progress" data-width="88%"></div></div>
+          <div class="pct">88%</div>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- LANGUAGES SECTION -->
+  <div class="wrap">
+    <header>
+      <h1>&lt;Languages <span class="tag">/&gt;</span></h1>
+    </header>
+
+    <main class="grid" id="languageGrid">
+
+      <section class="card">
+        <div class="title"><span class="icon"></span>Python</div>
+        <div class="barwrap">
+          <div class="bar"><div class="progress" data-width="90%"></div></div>
+          <div class="pct">90%</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="title"><span class="icon"></span>Bash / Shell</div>
+        <div class="barwrap">
+          <div class="bar"><div class="progress" data-width="85%"></div></div>
+          <div class="pct">85%</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="title"><span class="icon"></span>HTML</div>
+        <div class="barwrap">
+          <div class="bar"><div class="progress" data-width="70%"></div></div>
+          <div class="pct">70%</div>
+        </div>
+      </section>
+
+      <!-- <section class="card">
+        <div class="title"><span class="icon"></span>C / C++</div>
+        <div class="barwrap">
+          <div class="bar"><div class="progress" data-width="60%"></div></div>
+          <div class="pct">60%</div>
+        </div>
+      </section> -->
+
+    </main>
+  </div><br><br>
+
+
+  <!-- JS ANIMATION FIXED -->
+  <script>
+    function animateGrid(grid) {
+      const bars = grid.querySelectorAll(".progress");
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            grid.classList.add("active");
+
+            bars.forEach(bar => {
+              const finalWidth = bar.dataset.width;
+              bar.style.width = "6%";
+              setTimeout(() => bar.style.width = finalWidth, 80);
+            });
+          }
+        });
+      }, { threshold: 0.3 });
+
+      observer.observe(grid);
+    }
+
+    animateGrid(document.getElementById("skillsGrid"));
+    animateGrid(document.getElementById("languageGrid"));
+  </script>
+
+</body>
+
+</html>
